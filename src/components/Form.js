@@ -3,7 +3,7 @@ import Modal from 'react-modal'
 
 
 class Form extends Component {
-    
+
     constructor(props) {
         super(props)
 
@@ -14,30 +14,47 @@ class Form extends Component {
             modal: false
 
         }
+        this.handleAllChanges = this.handleAllChanges.bind(this)
+
+        
     }
 
-    handleNameChange = (event) => {
+  // This component below uses the single handleAllChanges to handle all the chnages that occur in the form 
 
-        this.setState({
-            name: event.target.value
-        })
+  handleAllChanges = (event) =>{
 
-    }
+    let changes = event.target.name
+    let value = event.target.value
 
-    handleDescription = (event) => {
+    this.setState({
+        [changes]: value
+    })
+  }
 
-        this.setState({
-            description: event.target.value
-        })
+    // handleNameChange = (event) => {
 
-    }
-    handleNeed = (event) => {
+    //     this.setState({
+    //         name: event.target.value
+    //     })
 
-        this.setState({
-            need: event.target.value
-        })
+    // }
 
-    }
+    // handleDescription = (event) => {
+
+    //     this.setState({
+    //         description: event.target.value
+    //     })
+
+    // }
+    // handleNeed = (event) => {
+
+    //     this.setState({
+    //         need: event.target.value
+    //     })
+
+    // }
+
+    
     handleSubmit = (event) => {
         alert(`Success ${this.state.name} ${this.state.description}`)
         //this.modalClose()
@@ -108,17 +125,17 @@ class Form extends Component {
                         <h2>What do you need to do?</h2>
                         <form onSubmit={this.handleSubmit}>
                             <label>Name</label>
-                            <input type='text' placeholder='Enter your full name' value={this.state.name} onChange={this.handleNameChange} />
+                            <input type='text' name='name' placeholder='Enter your full name' value={this.state.name} onChange={this.handleAllChanges} />
                             <label>
                                 What needs to be done?
                          </label>
-                            <textarea placeholder='e.g. Help me organize my house' value={this.state.need} onChange={this.handleNeed}>
+                            <textarea name='need' placeholder='e.g. Help me organize my house' value={this.state.need} onChange={this.handleAllChanges}>
 
                             </textarea>
                             <label>
                                 Specify the descriptions
                          </label>
-                            <textarea placeholder='Be specific to describe your needs...' value={this.state.description} onChange={this.handleDescription}>
+                            <textarea name='description' placeholder='Be specific to describe your needs...' value={this.state.description} onChange={this.handleAllChanges}>
 
                             </textarea>
                             <button type='submit'>
