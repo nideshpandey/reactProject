@@ -28,28 +28,6 @@ class Form extends Component {
 
     }
 
-    // handleNameChange = (event) => {
-
-    //     this.setState({
-    //         name: event.target.value
-    //     })
-
-    // }
-
-    // handleDescription = (event) => {
-
-    //     this.setState({
-    //         description: event.target.value
-    //     })
-
-    // }
-    // handleNeed = (event) => {
-
-    //     this.setState({
-    //         need: event.target.value
-    //     })
-
-    // }
     handleSubmit = (event) => {
         alert(`Success ${this.state.name} ${this.state.description}`)
         //this.modalClose()
@@ -75,42 +53,10 @@ class Form extends Component {
     render() {
 
         return (
-            //This is a simple form built using html and css
-            // <div class='create'>
-            //     <h2>What do you need to do?</h2>
-            //     <form onSubmit={this.handleSubmit}>
-            //     <label>Name</label>
-            //             <input type='text' placeholder='Enter your full name' value={this.state.name} onChange={this.handleNameChange} />
-            //             <label>
-            //                 What needs to be done?
-            //             </label>
-            //             <textarea placeholder='e.g. Help me organize my house' value={this.state.need} onChange={this.handleNeed}>
-
-            //             </textarea>
-            //             <label>
-            //                 Specify the descriptions
-            //             </label>
-            //             <textarea placeholder='Be specific to describe your needs...'  value={this.state.description} onChange={this.handleDescription}>
-
-            //             </textarea>
-            //             <button type='submit'>
-            //                 Submit
-            //    </button>
-
-            //     </form>
-
-            // </div>
-
-
-
-
-
-
-
 
             //Here is the the form which is built using the react-modal component
 
-            <div>
+            <div class='form'>
 
                 <h2>Fill the information</h2>
                 <button onClick={this.modalOpen}>Post information</button>

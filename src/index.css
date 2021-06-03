@@ -46,3 +46,32 @@ code {
   border-radius: 8px;
   cursor: pointer;
 }
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: auto;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+}
+.navbar h1 {
+  color :red;
+}
+.navbar .links {
+  margin-left: auto;
+  color: black;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #359cf1;
+}
+
+.form h2{
+  font-size: 36px;
+  
+}
